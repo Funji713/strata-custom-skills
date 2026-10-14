@@ -73,7 +73,7 @@ class Skills:
             path = args.get('path', 'SKILL.md')
             self.library.parts(path)
             result = self.library.call('read_file', {'path': skill + '/' + path,
-                'start_line': args.get('start_line', 1), 'max_lines': 80})
+                'start_line': args.get('start_line', 1), 'max_lines': 200 if path == 'SKILL.md' else 80})
             return {'adapter': ADAPTER, **result}
         if name == 'classify_task':
             path = SKILLS / 'codex-model-router/scripts/route_task.py'

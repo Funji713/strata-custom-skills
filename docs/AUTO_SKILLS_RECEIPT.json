@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-14",
+  "model": "qwen3.8-flash-next-iq2_xs",
+  "hardware": "NVIDIA RTX 4070, Linux Docker",
+  "endpoint": "/v1/chat/completions",
+  "strata_mcp": true,
+  "policy": "runtime/auto_skills_prompt.txt",
+  "user_task_names_a_skill": false,
+  "user_task": "Analyze average([]) division by zero in a workspace file without modifying it",
+  "observed_tool": "skills__read_skill",
+  "successful_result": true,
+  "result_chars": 7152,
+  "observed_followup_tool": "workspace__read_file",
+  "followup_successful_result": true,
+  "evidence_source": "Live Strata server log",
+  "final_prose_completed": false,
+  "limitations": "No claim of general selection accuracy. Live model read source before completing the initial skill pagination. Final runtime returns all six main entries in one activation, verified by deterministic tests; that adjustment was not rerun through the model."
+}

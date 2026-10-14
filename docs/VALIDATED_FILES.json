@@ -1,8 +1,13 @@
 {
-  "runtime/skills_mcp.py": "f9d91eed64356cc909bb7ec0a13341376956878a04fbe222e53191250c08c4f9",
+  "runtime/skills_mcp.py": "6af0f485ac9c875416c4c69b40106c65f1578d1152a4e08811253ac29262f402",
   "runtime/workspace_mcp.py": "dd25fb79b7e3d144fe26270395e6237aa46c8968ccf3128c27a591392278cd1b",
   "install.py": "bce589cd403eb85f4c1b449f432f9428d380d44dc1ef367b6832151b814cd0dc",
-  "Dockerfile": "823b84964a827a68a5ee3792a836be6fda87ae0c3a5199c3907a802714846b3c",
-  "tests/test_skills.py": "fe6dbeb6d838ff511d2811cbfd11fa03c2ab670b4f31abc810e6c34673b69898",
-  "tests/test_install.py": "69099589bf769fa6aa3917dbd0d7c1a15392fca80a38401462f7b347d9b1f967"
+  "Dockerfile": "1260e8ce3c4861bf258f6ffbf1bfec31b933c622440ef317026993790488e0f1",
+  "tests/test_skills.py": "48edd175e0642e1417bce07dd94d9e10fb377e36f0fef9201b015f701b174e9f",
+  "tests/test_install.py": "69099589bf769fa6aa3917dbd0d7c1a15392fca80a38401462f7b347d9b1f967",
+  "runtime/auto_skills.js": "6a28e5a655fa0ab7637c47d35f4b1e244be57a74ffe522aa4cdc12940f6f51ae",
+  "runtime/auto_skills_prompt.txt": "901c2b728e29f1a7c39e69b7adce0188c2c23ecd8960fa89373d17acf3c0e704",
+  "runtime/patch_web.py": "26a1e069c4ee68f8fdd48108443d33f30a74f714f0bf760f7f702d8e0174f192",
+  "tests/test_auto_skills.py": "ddb498d40bb97cdb1e2ffb70a66bde50cd6051c3b7601d3680ef53f6d4a20f25",
+  "tests/live_model.py": "7cb7579f13c9d4859225422cb7de57c7419b506b2a6c5d5ef7035ecea24d0dbd"
 }

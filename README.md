@@ -39,7 +39,13 @@ Invoke-RestMethod http://127.0.0.1:8080/mcp
 
 ## 在網頁聊天使用
 
-開啟 Strata 網頁的 **Tools / MCP**，在新聊天明確指定 skill，例如：
+此套件映像的 Strata 網頁預設會依工作內容選擇 skill：**Tools / MCP**
+開啟且 skills server ready 時，聊天請求會加入選擇規則，要求模型先讀取
+相關 SKILL.md 與需要的參考，再做工作。更新映像後重新整理網頁，
+可直接說「幫我除錯 app.py」或「規劃五頁產品簡報」，不必先記住 skill 名稱。
+一般問答、翻譯和簡單說明不要求載入 skill。已完整載入的 skill 可沿用。
+
+仍可明確指定 skill 或說「這次不要使用 skills」，你的選擇優先，例如：
 
 - 「請先載入 surgical-coding-debug，再修正 workspace 裡的 app.py。」
 - 「用 presentation-design-pro 規劃五頁繁體中文簡報，先儲存逐頁藍圖，再產出 PPTX。」
@@ -48,9 +54,15 @@ Invoke-RestMethod http://127.0.0.1:8080/mcp
 - 「使用 project-architecture-workflow 幫我規劃這個專案的架構與驗收。」
 - 「使用 codex-model-router 分類這個修改的複雜度，然後用本機模型完成。」
 
-API 需在 `/v1/chat/completions` 請求加 `"strata_mcp": true`。
-模型會看見 `skills__read_skill` 等工具；讀取有分頁，需接續 next_line。
-所有 skill 在工具目錄可發現，模型是否自動挑對取決於模型；明確指名最可靠。
+關閉 **Tools / MCP** 即停用工具及自動選擇規則。
+這是此 Docker 套件的網頁功能；原 Strata API server 和上游原始檔未修改。
+其他 API clients 仍需在 `/v1/chat/completions` 請求加 `"strata_mcp": true`，
+且不會自動加入網頁選擇規則。若要相同行為，可自行將
+`runtime/auto_skills_prompt.txt` 加入 system message。
+模型會看見 `skills__read_skill` 等工具；六個主 SKILL.md 在首次讀取即完整
+回傳，參考檔仍有分頁，需接續 next_line。
+六個 skill 的用途由 `runtime/auto_skills_prompt.txt` 明列；自動選擇是模型
+遵循指令的行為，不能保證每種任務都會選對。工具事件可確認實際讀取。
 檔案操作只限 `/workspace`。架構圖輸出在 `architectures/<唯一編號>/`。
 
 ## 能力邊界
@@ -65,6 +77,10 @@ PPTX 產生器只支援基本標題和條列；複雜版面、圖片、講者備
 每次讀取 skill 都會附上，原始文字無須改寫。可重用原附 Python CLI；
 MCP 僅開放固定工具，不執行使用者輸入的程式碼。
 
+Docker build 會以 `runtime/patch_web.py` 在映像內加入網頁規則；若 Strata
+版本的插入位置改變，build 會停止，需更新適配後再安裝。此套件是 opt-in
+安裝；未安裝此映像的上游預設行為不變。沒有修改 CUDA/HIP/SYCL 引擎。
+
 ## 驗證和移除
 
 ```sh
@@ -74,6 +90,14 @@ python -m unittest discover -s skills/project-architecture-workflow/tests -v
 python -m unittest discover -s skills/surgical-coding-debug/tests -v
 python -m unittest discover -s skills/architecture-visualizer/package/tests -v
 ```
+
+`tests/test_auto_skills.py` 的實際 JavaScript 請求測試需 Node.js；沒有 Node
+會顯示 skip，其餘 Python 測試照常執行。可單獨執行
+`python -m unittest discover -s tests -p test_auto_skills.py -v`。
+自動載入的實機測試：先在 workspace 建立 `auto-skill-check.py`，內容為
+`def average(values): return sum(values) / len(values)`，再執行
+`python tests/live_model.py --automatic --output test-results/automatic.json`。
+此測試使用網頁相同的 policy，請求未指名 skill，且只要求分析、不修改檔案。
 
 整合測試須在 Linux（Docker）執行，因安全檔案工具使用 O_NOFOLLOW/dir_fd。
 實測結果見 [docs/VALIDATION.md](docs/VALIDATION.md)。來源與使用權說明見

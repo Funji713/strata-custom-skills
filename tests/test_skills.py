@@ -40,6 +40,13 @@ class SkillsTest(unittest.TestCase):
             with self.assertRaises(ValueError):
                 self.skills.call('read_skill', {'skill': 'architecture-visualizer', 'path': path})
 
+    def test_activation_contains_each_complete_entry_within_mcp_budget(self):
+        for name in NAMES:
+            result = self.skills.call('read_skill', {'skill': name})
+            self.assertIsNone(result['next_line'], name)
+            self.assertEqual(len(result['content'].splitlines()), result['total_lines'])
+            self.assertLess(len(json.dumps(result, ensure_ascii=False)), 20000, name)
+
     def test_router_is_advisory(self):
         result = self.skills.call('classify_task', dict.fromkeys(('scope', 'reasoning', 'ambiguity', 'dependencies', 'risk', 'context'), 1))
         self.assertEqual(result['mode'], 'advisory-only')

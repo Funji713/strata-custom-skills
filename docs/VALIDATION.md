@@ -47,6 +47,45 @@ See `LIVE_MODEL_RECEIPT.json` for the compact public receipt. The full raw local
 response remains in the deployment's `docker-local/skills-live-validation.json`.
 Runtime and test snapshot hashes are recorded in `VALIDATED_FILES.json`.
 
+Automatic web selection update (same date and hardware): the opt-in package image
+now inserts a skill-selection system message into the web chat request only when
+Tools / MCP is on and `skills__read_skill` is ready. Ordinary API requests and
+upstream sources remain unchanged; no backend builds were required.
+
+`python -m unittest discover -s strata-custom-skills/tests -p test_auto_skills.py -v`
+passed 3 tests on Windows with Node 24.19.0: idempotent patch/source preservation,
+refusal on a missing/ambiguous anchor, and actual JavaScript request behavior.
+The JavaScript test covers MCP off/absent/non-boolean, unavailable skills, preservation
+of caller messages and explicit override text, plus the simple-Q&A policy.
+
+`docker run --rm --entrypoint /bin/sh -v "${PWD}/strata-custom-skills:/input:ro" strata:local-custom-skills -c 'cp -a /input /tmp/skills-check; cd /tmp/skills-check; /opt/strata/.venv/bin/python tests/run_checks.py'`
+passed 131 executed test cases; the additional JavaScript test was skipped in Docker
+because that image has no Node. The Node test above passed separately. Source manifest
+verification still matches all 82 originals byte-for-byte. The extracted deployed
+web app passed `node --check`; HTTP `/web/app.js` contains the patch, and `/health`
+reports the model loaded. The service was recreated using the existing localhost
+compose bindings.
+
+Live automatic selection: an unnamed Traditional Chinese debugging request about
+`average([])` caused the real model to call `skills__read_skill`; server logs confirm
+the call succeeded with 7,152 characters. It then successfully read the requested
+source via `workspace__read_file`. Final prose was not awaited; the final image
+deployment interrupted that request. This proves automatic invocation, not a
+completed debugging task or selection accuracy across all six skills. Compact
+evidence is in `AUTO_SKILLS_RECEIPT.json`; full local logs remain in the deployment's
+`docker-local/skills-auto-live-server.log`.
+
+The live run also showed that this model did not follow skill pagination before
+reading the source. The final runtime therefore returns up to 200 lines for the
+main SKILL.md (references retain 80-line pages). A focused Linux rerun of
+`python -m unittest discover -s tests -p test_skills.py -v` passed all 6 tests,
+including complete first activation of all six entries and every serialized
+result below the default 20,000-character MCP budget. The final change adds one
+executed test, for 133 unique checks passed across Linux and Windows, with the
+Node test executed on Windows. The final image was rebuilt and deployed; the
+post-adjustment full-entry behavior was tested deterministically, not by another
+model invocation.
+
 To repeat live validation:
 Use `python tests/live_model.py --output test-results/live-model.json` against the
 running local Strata endpoint. It calls a real read_skill tool through the same

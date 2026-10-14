@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://architecture-visualizer.local/schemas/source-index.schema.json",
+  "title": "Architecture Visualizer Source Index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "source_type", "project_structure", "languages", "frameworks", "entry_points", "subsystems", "high_priority_paths", "ignored_paths"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0.0"},
+    "source_type": {"enum": ["software_project", "research_paper", "technical_document", "mixed"]},
+    "project_structure": {"enum": ["single_project", "monorepo", "not_applicable", "unknown"]},
+    "title": {"type": ["string", "null"]},
+    "languages": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "frameworks": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "entry_points": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "subsystems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "name": {"type": "string", "minLength": 1},
+          "path": {"type": ["string", "null"]},
+          "description": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "high_priority_paths": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "ignored_paths": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "low_priority_paths": {"type": "array", "items": {"type": "string"}, "uniqueItems": true, "default": []},
+    "sections": {"type": "array", "items": {"type": "string"}, "uniqueItems": true, "default": []},
+    "figures": {"type": "array", "items": {"type": "string"}, "default": []},
+    "equations": {"type": "array", "items": {"type": "string"}, "default": []},
+    "tables": {"type": "array", "items": {"type": "string"}, "default": []},
+    "analysis_notes": {"type": "array", "items": {"type": "string"}, "default": []}
+  }
+}

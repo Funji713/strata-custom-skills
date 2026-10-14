@@ -1,0 +1,7 @@
+interface:
+  display_name: "Project Architecture Workflow"
+  short_description: "Minimal architecture and evidence-based delivery."
+  default_prompt: "Use $project-architecture-workflow for this task. Respect the requested work mode, preserve user changes and report only verification supported by current evidence."
+
+policy:
+  allow_implicit_invocation: true

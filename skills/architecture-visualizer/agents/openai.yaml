@@ -1,0 +1,6 @@
+interface:
+  display_name: "Architecture Visualizer"
+  short_description: "Evidence-grounded PPT architecture visuals"
+  default_prompt: "Use $architecture-visualizer to turn this project or paper into validated PowerPoint-ready architecture SVGs."
+policy:
+  allow_implicit_invocation: true

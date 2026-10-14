@@ -1,0 +1,25 @@
+{
+  "profile_version": "1.0.0",
+  "name": "ppt-16x9",
+  "canvas": {"width": 1920, "height": 1080, "aspect_ratio": "16:9"},
+  "safe_margin": {"left": 120, "right": 120, "top": 110, "bottom": 100},
+  "font": {
+    "slide_title_min_pt": 32,
+    "section_label_min_pt": 14,
+    "node_title_min_pt": 18,
+    "node_description_min_pt": 12,
+    "edge_label_min_pt": 11
+  },
+  "stroke": {"minimum_px": 1.5, "preferred_px": 2},
+  "svg": {
+    "preferred_elements": ["rect", "path", "line", "text", "tspan"],
+    "avoid": ["foreignObject", "complex_filter", "advanced_mask", "blend_mode", "external_css"]
+  },
+  "outputs": {
+    "editable_svg": true,
+    "portable_svg": true,
+    "png_optional": true,
+    "png_width": 3840,
+    "png_height": 2160
+  }
+}

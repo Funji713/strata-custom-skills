@@ -1,0 +1,6 @@
+*
+!Dockerfile
+!runtime/**
+!skills/**
+**/__pycache__
+**/*.pyc

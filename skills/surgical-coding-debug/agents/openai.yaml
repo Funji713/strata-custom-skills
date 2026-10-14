@@ -1,0 +1,7 @@
+interface:
+  display_name: "Surgical Coding and Debug"
+  short_description: "Evidence-led coding with risk-aware verification."
+  default_prompt: "Use $surgical-coding-debug for this task. Respect the requested work mode, preserve user changes and report only verification supported by current evidence."
+
+policy:
+  allow_implicit_invocation: true

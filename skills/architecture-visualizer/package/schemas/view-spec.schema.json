@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://architecture-visualizer.local/schemas/view-spec.schema.json",
+  "title": "Architecture Visualizer View Specification",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["view_schema_version", "outcome", "audience", "level", "language", "focus", "hero_entities", "narrative"],
+  "properties": {
+    "view_schema_version": {"type": "string", "const": "1.0.0"},
+    "outcome": {"enum": ["diagram", "simple_flow", "no_diagram_recommended", "insufficient_evidence"]},
+    "view_type": {
+      "enum": ["system_architecture", "data_flow", "ai_pipeline", "research_methodology", "model_architecture", "sequence_flow", "deployment_architecture"]
+    },
+    "audience": {"enum": ["general", "academic", "technical", "executive"]},
+    "level": {"enum": ["overview", "standard", "technical"]},
+    "language": {"enum": ["zh-TW", "en"]},
+    "focus": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "hero_entities": {"type": "array", "items": {"type": "string"}, "maxItems": 2, "uniqueItems": true},
+    "included_entities": {"type": "array", "items": {"type": "string"}, "uniqueItems": true, "default": []},
+    "excluded_entities": {"type": "array", "items": {"type": "string"}, "uniqueItems": true, "default": []},
+    "layout_archetype": {"enum": ["linear", "layered", "branch_merge", "parallel", "hierarchical", "hub_spoke", "swimlane", "feedback_loop"]},
+    "narrative": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "transformation", "core", "outcome", "key_message"],
+      "properties": {
+        "start": {"type": ["string", "null"]},
+        "transformation": {"type": ["string", "null"]},
+        "core": {"type": ["string", "null"]},
+        "outcome": {"type": ["string", "null"]},
+        "key_message": {"type": ["string", "null"]}
+      }
+    },
+    "reason": {"type": ["string", "null"]}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"outcome": {"const": "diagram"}}},
+      "then": {"required": ["view_type", "layout_archetype"]}
+    }
+  ]
+}

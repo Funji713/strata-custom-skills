@@ -1,0 +1,20 @@
+"""Stable v1 error taxonomy."""
+
+from __future__ import annotations
+
+
+class VisualizerError(RuntimeError):
+    def __init__(self, code: str, message: str):
+        super().__init__(message)
+        self.code = code
+
+
+SOURCE_PARSE_ERROR = "SOURCE_PARSE_ERROR"
+UNSUPPORTED_SOURCE = "UNSUPPORTED_SOURCE"
+UNSUPPORTED_LANGUAGE = "UNSUPPORTED_LANGUAGE"
+INSUFFICIENT_EVIDENCE = "INSUFFICIENT_EVIDENCE"
+SEMANTIC_CONFLICT = "SEMANTIC_CONFLICT"
+SEMANTIC_VALIDATION_FAILURE = "SEMANTIC_VALIDATION_FAILURE"
+LAYOUT_FAILURE = "LAYOUT_FAILURE"
+RENDER_FAILURE = "RENDER_FAILURE"
+EXPORT_FAILURE = "EXPORT_FAILURE"

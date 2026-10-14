@@ -1,0 +1,8 @@
+{
+  "runtime/skills_mcp.py": "f9d91eed64356cc909bb7ec0a13341376956878a04fbe222e53191250c08c4f9",
+  "runtime/workspace_mcp.py": "dd25fb79b7e3d144fe26270395e6237aa46c8968ccf3128c27a591392278cd1b",
+  "install.py": "bce589cd403eb85f4c1b449f432f9428d380d44dc1ef367b6832151b814cd0dc",
+  "Dockerfile": "823b84964a827a68a5ee3792a836be6fda87ae0c3a5199c3907a802714846b3c",
+  "tests/test_skills.py": "fe6dbeb6d838ff511d2811cbfd11fa03c2ab670b4f31abc810e6c34673b69898",
+  "tests/test_install.py": "69099589bf769fa6aa3917dbd0d7c1a15392fca80a38401462f7b347d9b1f967"
+}

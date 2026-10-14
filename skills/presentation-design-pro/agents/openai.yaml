@@ -1,0 +1,4 @@
+interface:
+  display_name: "Presentation Design Pro"
+  short_description: "Design evidence-led, decision-oriented presentation systems."
+  default_prompt: "Use $presentation-design-pro to design an evidence-led deck before selecting the appropriate slide production workflow."

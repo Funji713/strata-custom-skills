@@ -1,0 +1,58 @@
+{
+  "theme_version": "1.0.0",
+  "name": "research-tech-light",
+  "background": "#F8FAFC",
+  "surface": "#FFFFFF",
+  "text": {
+    "primary": "#111827",
+    "secondary": "#475569",
+    "muted": "#64748B"
+  },
+  "semantic_colors": {
+    "input": "#3B82F6",
+    "process": "#06B6D4",
+    "model": "#8B5CF6",
+    "external": "#F59E0B",
+    "database": "#10B981",
+    "output": "#EC4899",
+    "evaluation": "#EAB308",
+    "interface": "#6366F1",
+    "service": "#0EA5E9",
+    "decision": "#64748B"
+  },
+  "typography": {
+    "font_stack": ["Aptos", "Noto Sans TC", "Arial", "sans-serif"],
+    "title_weight": 600,
+    "section_weight": 600,
+    "node_title_weight": 600,
+    "body_weight": 400
+  },
+  "spacing": {
+    "unit": 8,
+    "node_gap": 32,
+    "group_gap": 48,
+    "content_padding": 20
+  },
+  "card": {
+    "radius": 18,
+    "border_width": 1,
+    "border_color": "#E2E8F0",
+    "shadow": "subtle"
+  },
+  "edge": {
+    "stroke_width": 2,
+    "primary_color": "#64748B",
+    "muted_color": "#94A3B8",
+    "routing": "orthogonal"
+  },
+  "group": {
+    "radius": 24,
+    "border_width": 1,
+    "border_color": "#E2E8F0",
+    "fill": "#F8FAFC"
+  },
+  "hero": {
+    "scale": 1.25,
+    "border_width": 2
+  }
+}

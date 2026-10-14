@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://architecture-visualizer.local/schemas/slide-content.schema.json",
+  "title": "Architecture Visualizer Slide Content",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "title", "key_message", "speaker_notes", "presentation_order"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0.0"},
+    "title": {"type": "string", "minLength": 1},
+    "subtitle": {"type": ["string", "null"]},
+    "key_message": {"type": ["string", "null"]},
+    "speaker_notes": {"type": "array", "items": {"type": "string"}},
+    "presentation_order": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  }
+}

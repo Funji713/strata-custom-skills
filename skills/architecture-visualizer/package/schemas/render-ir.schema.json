@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://architecture-visualizer.local/schemas/render-ir.schema.json",
+  "title": "Architecture Visualizer Render IR",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["render_ir_version", "diagram", "nodes", "groups", "edges", "annotations", "constraints", "presentation"],
+  "properties": {
+    "render_ir_version": {"type": "string", "const": "1.0.0"},
+    "diagram": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "view_type", "layout_archetype", "theme", "export_profile", "language"],
+      "properties": {
+        "title": {"type": "string", "minLength": 1},
+        "subtitle": {"type": ["string", "null"]},
+        "view_type": {"enum": ["system_architecture", "data_flow", "ai_pipeline", "research_methodology", "model_architecture", "sequence_flow", "deployment_architecture"]},
+        "layout_archetype": {"enum": ["linear", "layered", "branch_merge", "parallel", "hierarchical", "hub_spoke", "swimlane", "feedback_loop"]},
+        "theme": {"type": "string", "minLength": 1},
+        "export_profile": {"type": "string", "minLength": 1},
+        "language": {"enum": ["zh-TW", "en"]}
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "semantic_ref", "label", "category", "visual_role"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "semantic_ref": {"type": "string", "minLength": 1},
+          "label": {"type": "string", "minLength": 1},
+          "category": {"enum": ["input", "process", "model", "service", "database", "external", "output", "evaluation", "interface", "decision"]},
+          "description": {"type": ["string", "null"]},
+          "visual_role": {"enum": ["context", "supporting", "primary", "hero"]},
+          "group": {"type": ["string", "null"]},
+          "icon": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "label", "members"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "label": {"type": "string", "minLength": 1},
+          "order": {"type": ["integer", "null"], "minimum": 0},
+          "members": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "from", "to", "type"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "from": {"type": "string", "minLength": 1},
+          "to": {"type": "string", "minLength": 1},
+          "type": {"enum": ["main", "data", "api", "dependency", "optional", "bidirectional", "control", "feedback"]},
+          "label": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "annotations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "type", "text"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "type": {"enum": ["callout", "note", "warning", "label"]},
+          "target": {"type": ["string", "null"]},
+          "text": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "same_rank": {"$ref": "#/$defs/nodeGroups"},
+        "keep_together": {"$ref": "#/$defs/nodeGroups"},
+        "before": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [{"type": "string"}, {"type": "string"}],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "default": []
+        }
+      }
+    },
+    "presentation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key_message", "speaker_notes", "presentation_order"],
+      "properties": {
+        "key_message": {"type": ["string", "null"]},
+        "speaker_notes": {"type": "array", "items": {"type": "string"}},
+        "presentation_order": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    }
+  },
+  "$defs": {
+    "nodeGroups": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {"type": "string"},
+        "minItems": 2,
+        "uniqueItems": true
+      },
+      "default": []
+    }
+  }
+}

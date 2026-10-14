@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://architecture-visualizer.local/schemas/fact-evidence.schema.json",
+  "title": "Architecture Visualizer Facts and Evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "facts"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "statement",
+          "subject",
+          "relation",
+          "object",
+          "evidence_level",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "subject": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relation": {
+            "enum": [
+              "contains",
+              "imports",
+              "depends_on",
+              "calls",
+              "invokes",
+              "routes_to",
+              "reads",
+              "writes",
+              "produces",
+              "consumes",
+              "transforms",
+              "triggers",
+              "returns",
+              "evaluates",
+              "trains",
+              "feeds",
+              "compares"
+            ]
+          },
+          "object": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relation_mode": {
+            "enum": [
+              "static",
+              "runtime",
+              "conceptual",
+              "experimental"
+            ]
+          },
+          "evidence_level": {
+            "enum": [
+              "verified",
+              "supported",
+              "inferred",
+              "uncertain"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "type",
+                "source"
+              ],
+              "properties": {
+                "type": {
+                  "enum": [
+                    "runtime_reference",
+                    "configuration",
+                    "declaration",
+                    "route_definition",
+                    "dependency_manifest",
+                    "test_behavior",
+                    "documentation",
+                    "comment",
+                    "figure",
+                    "caption",
+                    "equation",
+                    "table"
+                  ]
+                },
+                "source": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "symbol": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "location": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "excerpt": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 500
+                },
+                "redacted": {
+                  "type": "boolean",
+                  "default": false
+                }
+              }
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "evidence_level": {
+                  "enum": [
+                    "verified",
+                    "supported"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "evidence": {
+                  "minItems": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

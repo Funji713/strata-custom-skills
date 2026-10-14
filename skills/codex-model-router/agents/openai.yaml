@@ -1,0 +1,6 @@
+interface:
+  display_name: "Codex Model Router"
+  short_description: "Route technical execution to a suitable Codex model."
+  default_prompt: "Use $codex-model-router to execute this technical task in one selected subtask, choosing Astra High directly when the complexity evidence qualifies, then report its validated result."
+policy:
+  allow_implicit_invocation: true

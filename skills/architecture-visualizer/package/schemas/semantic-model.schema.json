@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://architecture-visualizer.local/schemas/semantic-model.schema.json",
+  "title": "Architecture Visualizer Canonical Semantic Model",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["semantic_schema_version", "source_type", "entities", "relations", "conflicts"],
+  "properties": {
+    "semantic_schema_version": {"type": "string", "const": "1.0.0"},
+    "source_type": {"enum": ["software_project", "research_paper", "technical_document", "mixed"]},
+    "summary": {"type": ["string", "null"]},
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "type", "name", "evidence_refs"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "type": {"enum": ["actor", "interface", "component", "service", "process", "model", "data", "dataset", "storage", "external_service", "experiment", "metric", "objective", "output", "concept"]},
+          "name": {"type": "string", "minLength": 1},
+          "responsibility": {"type": ["string", "null"]},
+          "subsystem": {"type": ["string", "null"]},
+          "evidence_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true, "default": []}
+        }
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "source", "target", "relation", "mode", "evidence_refs"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "source": {"type": "string", "minLength": 1},
+          "target": {"type": "string", "minLength": 1},
+          "relation": {"enum": ["contains", "imports", "depends_on", "calls", "invokes", "routes_to", "reads", "writes", "produces", "consumes", "transforms", "triggers", "returns", "evaluates", "trains", "feeds", "compares"]},
+          "mode": {"enum": ["static", "runtime", "conceptual", "experimental"]},
+          "evidence_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "label": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "status", "candidates", "resolution_basis"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "status": {"enum": ["open", "resolved", "unresolved"]},
+          "candidates": {"type": "array", "items": {"type": "string"}, "minItems": 2},
+          "selected": {"type": ["string", "null"]},
+          "resolution_basis": {"type": ["string", "null"]},
+          "evidence_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true, "default": []}
+        }
+      }
+    },
+    "assumptions": {"type": "array", "items": {"type": "string"}, "default": []},
+    "uncertainties": {"type": "array", "items": {"type": "string"}, "default": []}
+  }
+}

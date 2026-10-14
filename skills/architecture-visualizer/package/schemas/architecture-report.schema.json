@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://architecture-visualizer.local/schemas/architecture-report.schema.json",
+  "title": "Architecture Visualizer Architecture Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "source_summary", "core_components", "core_flow", "assumptions", "conflicts", "uncertainties", "abstractions", "diagram_decisions"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0.0"},
+    "source_summary": {"type": ["string", "null"]},
+    "detected_architecture": {"type": ["string", "null"]},
+    "core_components": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "core_flow": {"type": "array", "items": {"type": "string"}},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "conflicts": {"type": "array", "items": {"type": "string"}},
+    "uncertainties": {"type": "array", "items": {"type": "string"}},
+    "abstractions": {"type": "array", "items": {"type": "string"}},
+    "diagram_decisions": {"type": "array", "items": {"type": "string"}}
+  }
+}

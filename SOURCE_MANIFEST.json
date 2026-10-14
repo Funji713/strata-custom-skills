@@ -1,0 +1,420 @@
+{
+  "source": "User custom Codex skills",
+  "excluded": [
+    ".git",
+    "__pycache__",
+    "*.pyc"
+  ],
+  "files": [
+    {
+      "path": "skills/architecture-visualizer/agents/openai.yaml",
+      "sha256": "d44167938a5200398d2b4f804bbcefa75b25914444d5c9bc9b689b38c7634334",
+      "bytes": 291
+    },
+    {
+      "path": "skills/architecture-visualizer/package/architecture_visualizer/__init__.py",
+      "sha256": "f6c8684d7e1326447dc4717563b128bb620db03cf1c11cd338e1619d4f257d82",
+      "bytes": 264
+    },
+    {
+      "path": "skills/architecture-visualizer/package/architecture_visualizer/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "bytes": 48
+    },
+    {
+      "path": "skills/architecture-visualizer/package/architecture_visualizer/cli.py",
+      "sha256": "74070076267e91f9335a7dd6b65d00961437735ee82654b9d7eda22ac3899c14",
+      "bytes": 1924
+    },
+    {
+      "path": "skills/architecture-visualizer/package/architecture_visualizer/discovery.py",
+      "sha256": "24e2ed8aeb1fcc4cfc022541d171882c27f6adc07ded7053f01b8e540f5b93ee",
+      "bytes": 8628
+    },
+    {
+      "path": "skills/architecture-visualizer/package/architecture_visualizer/errors.py",
+      "sha256": "4529547d353b3121529f1e146648c9b658e59bb0d9f59f2cede92b979f332a9e",
+      "bytes": 597
+    },
+    {
+      "path": "skills/architecture-visualizer/package/architecture_visualizer/evidence.py",
+      "sha256": "189bf6d177ba36f1f0383487da78ef3ca733d859c165954732e1a5beafc683c4",
+      "bytes": 16447
+    },
+    {
+      "path": "skills/architecture-visualizer/package/architecture_visualizer/layout.py",
+      "sha256": "cbc42771b782045f9238a9c1004ceb1070937362c4432f428aa3b76e5285b0d5",
+      "bytes": 6540
+    },
+    {
+      "path": "skills/architecture-visualizer/package/architecture_visualizer/pipeline.py",
+      "sha256": "58361d3847757c90eecc20b7fa0d8795a09df5c8a1805511c4de443534aca4cc",
+      "bytes": 7627
+    },
+    {
+      "path": "skills/architecture-visualizer/package/architecture_visualizer/render_ir.py",
+      "sha256": "33bae16618b6b4176c70a86bbb0e1f1ad3c2312b8d748dd41800d0c9fd1f283b",
+      "bytes": 5960
+    },
+    {
+      "path": "skills/architecture-visualizer/package/architecture_visualizer/security.py",
+      "sha256": "6ee00095b40354f0b38879820aaa4429f92cad2fd6e85b9fdb8fb11afbcab850",
+      "bytes": 3204
+    },
+    {
+      "path": "skills/architecture-visualizer/package/architecture_visualizer/semantic.py",
+      "sha256": "4cacfe18803d4cae789cabd8f5fc3e4047fc9501861228586f7df28b26091b7a",
+      "bytes": 7097
+    },
+    {
+      "path": "skills/architecture-visualizer/package/architecture_visualizer/svg.py",
+      "sha256": "09b2ac7b5d8e0973e464c4a8953e9fdf8fc111e43b06bda363111f256f031c3e",
+      "bytes": 6849
+    },
+    {
+      "path": "skills/architecture-visualizer/package/architecture_visualizer/validation.py",
+      "sha256": "89fea911d89e76a2ca092399021d36ee97dd44e449252985f70d1ecf7d858b8f",
+      "bytes": 6586
+    },
+    {
+      "path": "skills/architecture-visualizer/package/architecture_visualizer/views.py",
+      "sha256": "dec0d713cfdfd7add7f7a7a29b33a4d907a7edcc506fa31116017217a417e3aa",
+      "bytes": 10336
+    },
+    {
+      "path": "skills/architecture-visualizer/package/MANIFEST.md",
+      "sha256": "67f805e3a3e1dfcc01b9bb0116a46fd6b70c8d5080987e4c612f9386f030e157",
+      "bytes": 1269
+    },
+    {
+      "path": "skills/architecture-visualizer/package/profiles/ppt-16x9.json",
+      "sha256": "19cc93e0ef0f0e1f8d2c183b8973ebec6db66e9b4493e53431aa109b8b95c28b",
+      "bytes": 745
+    },
+    {
+      "path": "skills/architecture-visualizer/package/prompts/conflict-resolution.md",
+      "sha256": "d80ca0a2df5f693be68d34c3ffef529fabdb840ebac983a5851ebdbf7986d142",
+      "bytes": 596
+    },
+    {
+      "path": "skills/architecture-visualizer/package/prompts/narrative-planner.md",
+      "sha256": "bbb9b25d7cd16e9b4edf7f4a7d3653714ffe815a46bae9acb238f6acd934732f",
+      "bytes": 432
+    },
+    {
+      "path": "skills/architecture-visualizer/package/prompts/paper-discovery.md",
+      "sha256": "d88639f0d0d9c2d7057dbcfcb992bf44aa1537033bd8e9dad2125be0cff5a764",
+      "bytes": 564
+    },
+    {
+      "path": "skills/architecture-visualizer/package/prompts/repository-discovery.md",
+      "sha256": "3ee954432d06064c32b73ab63f089b9ec59868b9a35f2463a5440b0d636c9d78",
+      "bytes": 717
+    },
+    {
+      "path": "skills/architecture-visualizer/package/prompts/semantic-extraction.md",
+      "sha256": "544ddc25d977499eed7c544c41f29c7b19b44d03025d37b425d0d1837618cc12",
+      "bytes": 566
+    },
+    {
+      "path": "skills/architecture-visualizer/package/prompts/view-planner.md",
+      "sha256": "30f52d6f2a0a43456a10271730cca3cb21409fae92d0bf070a290174c8927c2e",
+      "bytes": 670
+    },
+    {
+      "path": "skills/architecture-visualizer/package/pyproject.toml",
+      "sha256": "8a7d026d95a5c2da6cede78c9bdb0646fd3e4e4e57f71c19a0831f8034c60100",
+      "bytes": 402
+    },
+    {
+      "path": "skills/architecture-visualizer/package/schemas/architecture-report.schema.json",
+      "sha256": "bcc4c33292c76eefa3fc1a7d15a8da839c3ed93934f6af37d8d56a6d118b22c5",
+      "bytes": 1123
+    },
+    {
+      "path": "skills/architecture-visualizer/package/schemas/fact-evidence.schema.json",
+      "sha256": "20d603774c19a3d6fb31a0d2a02df0811eee3c3ac0546b1b0612edba66c68f58",
+      "bytes": 4192
+    },
+    {
+      "path": "skills/architecture-visualizer/package/schemas/render-ir.schema.json",
+      "sha256": "0abfc9ef2c924648bfa4b2cb95ddf4486c170926178c3b8e3d17b531bebec5b6",
+      "bytes": 4682
+    },
+    {
+      "path": "skills/architecture-visualizer/package/schemas/semantic-model.schema.json",
+      "sha256": "c5a69facd4c16fc22204f9fe6b9932faded45b683ab157b9cb19fddee855933e",
+      "bytes": 3161
+    },
+    {
+      "path": "skills/architecture-visualizer/package/schemas/slide-content.schema.json",
+      "sha256": "d8ea6a9ce996130be6dae4412dda61a6cfc29fa68b92e0a5cddb988dacd2997a",
+      "bytes": 740
+    },
+    {
+      "path": "skills/architecture-visualizer/package/schemas/source-index.schema.json",
+      "sha256": "0a4145dcc8dcaddb35714041514fab3fe013618c875479e79b51d62b72624f8f",
+      "bytes": 2135
+    },
+    {
+      "path": "skills/architecture-visualizer/package/schemas/view-spec.schema.json",
+      "sha256": "c749188ff0789eb7ac83c95d78bb90bbabb7f438eb6ef8413ef5c32681dcb6f7",
+      "bytes": 2126
+    },
+    {
+      "path": "skills/architecture-visualizer/package/schemas/vocabulary.schema.json",
+      "sha256": "32cde80bd7ced04411bc66f967a6b74e9c1e214cf424e6585a72ea0c7fb9bf24",
+      "bytes": 2320
+    },
+    {
+      "path": "skills/architecture-visualizer/package/scripts/validate_package.py",
+      "sha256": "85520a7c47a5988518f33717d8b07260205d2165d3e7649dd385b7278127f4f4",
+      "bytes": 3194
+    },
+    {
+      "path": "skills/architecture-visualizer/package/SKILL.md",
+      "sha256": "16962263e6d8bdb19608cd9b2d5d8bcbac7d68a0b5efc2acc6aca237c338a285",
+      "bytes": 19121
+    },
+    {
+      "path": "skills/architecture-visualizer/package/tests/acceptance/README.md",
+      "sha256": "bf713ab8f36f04a0a0a133a9c898836edbb23d19c8aa047b09b7b52559d8a0a6",
+      "bytes": 2386
+    },
+    {
+      "path": "skills/architecture-visualizer/package/tests/test_acceptance.py",
+      "sha256": "09fbfe05691bc794872e8f035911aa6844396eb921154770a188f8a2f3bcbac5",
+      "bytes": 13477
+    },
+    {
+      "path": "skills/architecture-visualizer/package/themes/research-tech-light.json",
+      "sha256": "7fdca676aead169fdc9d82548a2328cb3c338d239246fa34acef92e7a2f7bd77",
+      "bytes": 1209
+    },
+    {
+      "path": "skills/architecture-visualizer/package/VERSION",
+      "sha256": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03",
+      "bytes": 6
+    },
+    {
+      "path": "skills/architecture-visualizer/SKILL.md",
+      "sha256": "32d813007034bf5afb14ed162b9363a2233061e47180e67d8c5d4029708505cd",
+      "bytes": 1967
+    },
+    {
+      "path": "skills/codex-model-router/agents/openai.yaml",
+      "sha256": "94b3ed91dcca3db4eae8f4151119eb324e86f6f87a1f4b4dee46b8006f2d5e81",
+      "bytes": 375
+    },
+    {
+      "path": "skills/codex-model-router/docs/assets/benchmark-quality-score.png",
+      "sha256": "6ee1a7fcfa576fd8d24965ba7310175e4bd58f8c5a08c3ea76624fde8b424214",
+      "bytes": 145708
+    },
+    {
+      "path": "skills/codex-model-router/docs/assets/benchmark-route-composition.png",
+      "sha256": "2bd224f81fe2fb6d8f2a0a164d55982c94c904490fdbf21b5f32a7f4e0e576f6",
+      "bytes": 186317
+    },
+    {
+      "path": "skills/codex-model-router/docs/assets/benchmark-task-design.png",
+      "sha256": "164197846add7c45fc88c957ecbc70d80ce9b890eaacc2275e78f749a3b1b8a6",
+      "bytes": 224911
+    },
+    {
+      "path": "skills/codex-model-router/docs/assets/benchmark-usage.png",
+      "sha256": "091666ca187850172ec9a4b28f04c9afa1286e30d86b3e0126ab978ac59e94e3",
+      "bytes": 127175
+    },
+    {
+      "path": "skills/codex-model-router/README.md",
+      "sha256": "58d686fbd0bbdcf5f2e88ba34ca926185c73e6ddcb33e8fee8da65743806cafb",
+      "bytes": 4798
+    },
+    {
+      "path": "skills/codex-model-router/references/routing-policy.md",
+      "sha256": "9faf510d569c546f1462dfffb95f55b73968951ee9151e35be5e16e0b277792f",
+      "bytes": 8071
+    },
+    {
+      "path": "skills/codex-model-router/scripts/route_task.py",
+      "sha256": "cc7c2cb1b0e05281215714aaba6055f4237edf9988109d61546e33b9e035b6ac",
+      "bytes": 17511
+    },
+    {
+      "path": "skills/codex-model-router/SKILL.md",
+      "sha256": "7ae3f90318a1a3456185269d2bab3f8b128571d3333ae817441a322efd8f87f0",
+      "bytes": 10306
+    },
+    {
+      "path": "skills/presentation-design-pro/agents/openai.yaml",
+      "sha256": "cd4e75989a41607c91b014561dbf28823b197282b9d90506cb4d3525eedf0b9b",
+      "bytes": 277
+    },
+    {
+      "path": "skills/presentation-design-pro/references/academic-paper-reference-audit.md",
+      "sha256": "c73840718cabe07b3b9a25e4577e876abaab82abebe98252c4c9e2e63bda77c1",
+      "bytes": 5243
+    },
+    {
+      "path": "skills/presentation-design-pro/references/presentation-case-library.md",
+      "sha256": "d2c6dafbe0d58b92c7977b6c94b1a1b8711dff46598fa30719bdc2b3fcc82b8a",
+      "bytes": 5678
+    },
+    {
+      "path": "skills/presentation-design-pro/references/presentation-foundations.md",
+      "sha256": "88861f26195a251cd8bc759dc98aebb368bbac5d0adbba506cb1ed542b6243f5",
+      "bytes": 3768
+    },
+    {
+      "path": "skills/presentation-design-pro/references/presentation-source-catalog.md",
+      "sha256": "a438ed0147196e31b5400ae25b14238de385313943e64239ac3de6db310792eb",
+      "bytes": 4655
+    },
+    {
+      "path": "skills/presentation-design-pro/references/slide-blueprint-storyboard.md",
+      "sha256": "a6bc1f05c79da04f69bc60965943d64ce258b13e9728b1b9504d5b5bb1d909be",
+      "bytes": 4034
+    },
+    {
+      "path": "skills/presentation-design-pro/SKILL.md",
+      "sha256": "f317845b5bdcfcf25275b6a31ce97c6f4cba43214581446b9167ab2ad0db2749",
+      "bytes": 12686
+    },
+    {
+      "path": "skills/project-architecture-workflow/.github/workflows/validate.yml",
+      "sha256": "7cce0ea79c29330de5b660095a7cc2be95355416dfdb642cf1850d91dc88e55c",
+      "bytes": 696
+    },
+    {
+      "path": "skills/project-architecture-workflow/.gitignore",
+      "sha256": "82ed0bc2ce26f6bcfaa39410d7668362a60b5774857970228379d27b6cedef38",
+      "bytes": 33
+    },
+    {
+      "path": "skills/project-architecture-workflow/agents/openai.yaml",
+      "sha256": "5ef975a88dcfd759d9b3f68191ab760e49c6d2e8bf7e8cecf842fe5da921a014",
+      "bytes": 367
+    },
+    {
+      "path": "skills/project-architecture-workflow/CHANGELOG.md",
+      "sha256": "23eddf02ffcefd04bc14eceba9769c16c816b4075e4d15f1e0e40f024968f1a5",
+      "bytes": 1483
+    },
+    {
+      "path": "skills/project-architecture-workflow/evals/cases.json",
+      "sha256": "cf349a3071ccdd30b99d71a30f3c0181514b502c8a6f16873c1976c8a8e3ab84",
+      "bytes": 7623
+    },
+    {
+      "path": "skills/project-architecture-workflow/evals/README.md",
+      "sha256": "1f854039d1e56ce6da5eb23600c3e688f1e2ca71c65da591cd898db132f64390",
+      "bytes": 3556
+    },
+    {
+      "path": "skills/project-architecture-workflow/README.md",
+      "sha256": "6071eb30a20e21a16dbc7854c8e85487736b99b37d72bb09ff6e5f35bc9da6bc",
+      "bytes": 3396
+    },
+    {
+      "path": "skills/project-architecture-workflow/references/architecture-control-template.md",
+      "sha256": "51bf01c7b0bba15d30bff1cee31ac73caed79fad76535e0b036ac9d61a9d46a5",
+      "bytes": 5697
+    },
+    {
+      "path": "skills/project-architecture-workflow/references/execution-protocol.md",
+      "sha256": "5ab02b6ddf9b7f76d386c9f416261427491137bf9ce35b9c7b23bd6cb7068f86",
+      "bytes": 11149
+    },
+    {
+      "path": "skills/project-architecture-workflow/scripts/validate.py",
+      "sha256": "fff43e0065642a7c04ea3b80fdbc137b99df70c29a440b5843285d317ba8d051",
+      "bytes": 14373
+    },
+    {
+      "path": "skills/project-architecture-workflow/SKILL.md",
+      "sha256": "baa4241a927783584e5e2f27be85c912ee82f38dde1eeceb2c179fb4cb79f9d8",
+      "bytes": 9051
+    },
+    {
+      "path": "skills/project-architecture-workflow/tests/test_validate.py",
+      "sha256": "a98043ca78adb0aacf36ea0f5224a2e7e02d3b82d1d4f1935bdb7de153c740b2",
+      "bytes": 10570
+    },
+    {
+      "path": "skills/surgical-coding-debug/.github/workflows/validate.yml",
+      "sha256": "7cce0ea79c29330de5b660095a7cc2be95355416dfdb642cf1850d91dc88e55c",
+      "bytes": 696
+    },
+    {
+      "path": "skills/surgical-coding-debug/.gitignore",
+      "sha256": "82ed0bc2ce26f6bcfaa39410d7668362a60b5774857970228379d27b6cedef38",
+      "bytes": 33
+    },
+    {
+      "path": "skills/surgical-coding-debug/agents/openai.yaml",
+      "sha256": "345e2c4dd597a66db6164c49265c0ab46f6912c063840af61bcf97d056477376",
+      "bytes": 355
+    },
+    {
+      "path": "skills/surgical-coding-debug/CHANGELOG.md",
+      "sha256": "23eddf02ffcefd04bc14eceba9769c16c816b4075e4d15f1e0e40f024968f1a5",
+      "bytes": 1483
+    },
+    {
+      "path": "skills/surgical-coding-debug/evals/cases.json",
+      "sha256": "9746f3f51347b26523f2f4673b20f4513969ad86ae3c26fc5b8a1141ec93aba1",
+      "bytes": 7741
+    },
+    {
+      "path": "skills/surgical-coding-debug/evals/README.md",
+      "sha256": "1f854039d1e56ce6da5eb23600c3e688f1e2ca71c65da591cd898db132f64390",
+      "bytes": 3556
+    },
+    {
+      "path": "skills/surgical-coding-debug/README.md",
+      "sha256": "7c4d95d4648a74b5e5d0a960308cfd6b8b8d802eb85d83a269432fa7811660f9",
+      "bytes": 3368
+    },
+    {
+      "path": "skills/surgical-coding-debug/references/execution-protocol.md",
+      "sha256": "5ab02b6ddf9b7f76d386c9f416261427491137bf9ce35b9c7b23bd6cb7068f86",
+      "bytes": 11149
+    },
+    {
+      "path": "skills/surgical-coding-debug/scripts/validate.py",
+      "sha256": "fff43e0065642a7c04ea3b80fdbc137b99df70c29a440b5843285d317ba8d051",
+      "bytes": 14373
+    },
+    {
+      "path": "skills/surgical-coding-debug/SKILL.md",
+      "sha256": "0a1e5449316400f2f1215f9f77f95d6ba6a4c98498dbb9f6c9fbb2fa735d8ce5",
+      "bytes": 7873
+    },
+    {
+      "path": "skills/surgical-coding-debug/tests/test_validate.py",
+      "sha256": "a98043ca78adb0aacf36ea0f5224a2e7e02d3b82d1d4f1935bdb7de153c740b2",
+      "bytes": 10570
+    },
+    {
+      "path": "skills/ui-ux-design-pro/agents/openai.yaml",
+      "sha256": "fb47468f769c22be727464adccdcb7a7ebb4a2b6baf2e4897dde8efcdc6b6e48",
+      "bytes": 257
+    },
+    {
+      "path": "skills/ui-ux-design-pro/references/design-foundations.md",
+      "sha256": "a6bec66aecdda760187b33681406d29d0699be90f4a40aeb044de3e63ba682b1",
+      "bytes": 3181
+    },
+    {
+      "path": "skills/ui-ux-design-pro/references/ui-source-catalog.md",
+      "sha256": "bc4daa13894aa41c77f86912fdbc3036de214ad9f32066c260754b91d328d1f4",
+      "bytes": 4685
+    },
+    {
+      "path": "skills/ui-ux-design-pro/SKILL.md",
+      "sha256": "d9fb9cf91d699375a6e461c3470019778a8b636e7dd92a09e9ae6c173ee49af0",
+      "bytes": 8142
+    }
+  ]
+}

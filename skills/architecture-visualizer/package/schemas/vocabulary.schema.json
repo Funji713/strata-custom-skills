@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://architecture-visualizer.local/schemas/vocabulary.schema.json",
+  "title": "Architecture Visualizer Shared Vocabulary",
+  "$defs": {
+    "source_type": {"enum": ["software_project", "research_paper", "technical_document", "mixed"]},
+    "evidence_level": {"enum": ["verified", "supported", "inferred", "uncertain"]},
+    "evidence_type": {"enum": ["runtime_reference", "configuration", "declaration", "route_definition", "dependency_manifest", "test_behavior", "documentation", "comment", "figure", "caption", "equation", "table"]},
+    "entity_type": {"enum": ["actor", "interface", "component", "service", "process", "model", "data", "dataset", "storage", "external_service", "experiment", "metric", "objective", "output", "concept"]},
+    "relation_type": {"enum": ["contains", "imports", "depends_on", "calls", "invokes", "routes_to", "reads", "writes", "produces", "consumes", "transforms", "triggers", "returns", "evaluates", "trains", "feeds", "compares"]},
+    "relation_mode": {"enum": ["static", "runtime", "conceptual", "experimental"]},
+    "view_type": {"enum": ["system_architecture", "data_flow", "ai_pipeline", "research_methodology", "model_architecture", "sequence_flow", "deployment_architecture"]},
+    "view_outcome": {"enum": ["diagram", "simple_flow", "no_diagram_recommended", "insufficient_evidence"]},
+    "audience": {"enum": ["general", "academic", "technical", "executive"]},
+    "detail_level": {"enum": ["overview", "standard", "technical"]},
+    "language": {"enum": ["zh-TW", "en"]},
+    "layout_archetype": {"enum": ["linear", "layered", "branch_merge", "parallel", "hierarchical", "hub_spoke", "swimlane", "feedback_loop"]},
+    "visual_role": {"enum": ["context", "supporting", "primary", "hero"]},
+    "render_node_category": {"enum": ["input", "process", "model", "service", "database", "external", "output", "evaluation", "interface", "decision"]},
+    "edge_type": {"enum": ["main", "data", "api", "dependency", "optional", "bidirectional", "control", "feedback"]},
+    "error_code": {"enum": ["SOURCE_PARSE_ERROR", "UNSUPPORTED_SOURCE", "UNSUPPORTED_LANGUAGE", "INSUFFICIENT_EVIDENCE", "SEMANTIC_CONFLICT", "SEMANTIC_VALIDATION_FAILURE", "LAYOUT_FAILURE", "RENDER_FAILURE", "EXPORT_FAILURE"]}
+  }
+}

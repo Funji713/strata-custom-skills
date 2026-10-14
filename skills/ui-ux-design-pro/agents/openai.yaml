@@ -1,0 +1,7 @@
+interface:
+  display_name: "UI UX Design Pro"
+  short_description: "Research UI patterns, UX theory, and build original interfaces."
+  default_prompt: "Use $ui-ux-design-pro to research and design this interface."
+
+policy:
+  allow_implicit_invocation: true

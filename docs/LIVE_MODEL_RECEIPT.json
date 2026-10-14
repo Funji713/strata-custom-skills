@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-14",
+  "model": "qwen3.8-flash-next-iq2_xs",
+  "endpoint": "/v1/chat/completions",
+  "strata_mcp": true,
+  "tool": "skills__read_skill",
+  "skill": "surgical-coding-debug",
+  "successful_result": true,
+  "result_chars": 7152,
+  "truncated": false,
+  "reply": "這個 skill 的用途是：在架構決策已確定的前提下，以證據為基礎、限定範圍地做出最小且完整的程式修改，並系統性地除錯可重現、間歇性或測試失敗的問題。"
+}
